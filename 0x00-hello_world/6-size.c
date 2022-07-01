@@ -2,6 +2,8 @@
 
 /**
  * main - prints size of various types
+ *
+ * Return: 0 to end the program
  */
 int main(void)
 {
@@ -16,4 +18,5 @@ int main(void)
 	printf("Size of a long: %u byte(s)\n" sizeof(long));
 	printf("Size of a long long: %u byte(s)\n" sizeof(long long));
 	printf("Size of a float: %u byte(s)\n" sizeof(float));
+	Return (0);
 }
