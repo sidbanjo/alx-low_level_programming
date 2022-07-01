@@ -2,6 +2,8 @@
 
 /**
  * main - Prints text with puts
+ *
+ * Return: 0 to end the program
  */
 int main(void)
 {
