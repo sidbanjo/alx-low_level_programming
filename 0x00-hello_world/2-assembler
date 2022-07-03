@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc $CFILE -S -o $(echo $CFILE | tr ".c" ".s"i)
+gcc $CFILE -S -o $(echo $CFILE | tr ".c" ".s")
