@@ -7,6 +7,8 @@
  */
 int main(void)
 {
-	putchar("%s\n", {a..z});
+	char alpha_list = {a..z}
+
+	putchar((char)alpha_list"\n")
 	return (0);
 }
