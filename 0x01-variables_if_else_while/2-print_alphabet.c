@@ -7,8 +7,8 @@
  */
 int main(void)
 {
-	char alpha_list = {a..z}
+	char alpha_list[] = (a..z);
 
-	putchar((char)alpha_list"\n")
+	putchar((char)alpha_list"\n");
 	return (0);
 }
