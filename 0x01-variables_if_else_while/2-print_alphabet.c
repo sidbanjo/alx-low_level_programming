@@ -8,14 +8,12 @@
 int main(void)
 {
 	char alpha_list[26];
-	int var=97;
-	char letters[];
+	int var;
 
-	while (alpha_list[var]!="\0")
+	for (var=97;var<=122;var++)
 	{
-		putchar(alpha_list[var], *letters);
-		var++;
+		putchar(alpha_list[var]);
 	}
-	putchar((char)letters"\n");
+	putchar("\n")
 	return (0);
 }
