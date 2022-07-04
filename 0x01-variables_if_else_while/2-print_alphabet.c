@@ -7,8 +7,15 @@
  */
 int main(void)
 {
-	char alpha_list[] = (a..z);
+	char alpha_list[26];
+	int var=97;
+	char letters[];
 
-	putchar((char)alpha_list"\n");
+	while (alpha_list[var]!="\0")
+	{
+		putchar(alpha_list[var], *letters);
+		var++;
+	}
+	putchar((char)letters"\n");
 	return (0);
 }
