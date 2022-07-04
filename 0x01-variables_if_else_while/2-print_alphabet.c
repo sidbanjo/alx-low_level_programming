@@ -12,8 +12,8 @@ int main(void)
 
 	for (var=97;var<=122;var++)
 	{
-		putchar(alpha_list[var]);
+		putchar(int alpha_list[var]);
 	}
-	putchar("\n")
+	putchar(char "\n");
 	return (0);
 }
