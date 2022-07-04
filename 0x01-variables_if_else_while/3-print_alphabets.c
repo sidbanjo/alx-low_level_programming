@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	char letters[53] = 
+	char letters[53] =
 		"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int i;
 
@@ -15,6 +15,5 @@ int main(void)
 	{
 		putchar((char) letters[i]);
 	}
-	putchar((char) *"\n");
 	return (0);
 }

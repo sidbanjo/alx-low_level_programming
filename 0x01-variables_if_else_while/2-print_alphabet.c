@@ -14,6 +14,5 @@ int main(void)
 	{
 		putchar((char) letter[i]);
 	}
-	putchar((char) *"\n");
 	return (0);
 }
