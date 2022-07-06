@@ -1,5 +1,8 @@
 #include <stdio.h>
-#include "main.h"
+#ifndef HEADER_FILE
+#define HEADER_FILE
+"main.h"
+#endif
 
 /**
  * main - prints _putchar
