@@ -1,6 +1,9 @@
 /**
  * _putchar - prints to stdout
- *
- * Return: 1
  */
 int _putchar(char);
+
+/**
+ * print_alphabet - generates the alphabets
+ */
+void print_alphabet(void);
