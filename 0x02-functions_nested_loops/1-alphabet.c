@@ -1,9 +1,10 @@
+#include "main.h"
 /**
  * print_alphabet - generates the alphabets
  *
  * Return: void
  */
-void print_alphabet()
+void print_alphabet(void)
 {
 	int i;
 
