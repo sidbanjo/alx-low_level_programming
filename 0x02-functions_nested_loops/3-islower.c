@@ -1,7 +1,8 @@
 /**
  * _islower - checks if argument is lower case
+ * @c: variable to check if lower case
  *
- * Returm: 1 if lower case otherwise 0
+ * Return: 1 if lower case otherwise 0
  */
 int _islower(int c)
 {
