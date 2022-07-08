@@ -6,5 +6,12 @@
  */
 int _abs(int i)
 {
-	return ((unsigned int) i);
+	if (i < 0)
+	{
+		return (0 - i);
+	}
+	else
+	{
+		return (i)
+	}
 }
