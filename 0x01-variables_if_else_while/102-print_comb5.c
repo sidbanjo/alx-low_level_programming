@@ -19,9 +19,11 @@ int main(void)
 	{
 		if (!((a == b) && (a == c) && (a == d)))
 		{
+		if (!(a == c && b == d))
+		{
 		if (c >= a)
 		{
-		if (d == '0' || d > b)
+		if (!(d < b))
 		{
 			putchar(a);
 			putchar(b);
@@ -32,7 +34,7 @@ int main(void)
 			{
 				putchar(',');
 				putchar(' ');
-			}}}}}}}}
+			}}}}}}}}}
 	putchar('\n');
 	return (0);
 }
