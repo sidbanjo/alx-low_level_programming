@@ -7,10 +7,7 @@
  */
 int main(void)
 {
-	int a;
-	int b;
-	int c;
-	int d;
+	int a, b, c, d;
 
 	for (a = '0'; a <= '9'; a++)
 	{
@@ -18,15 +15,13 @@ int main(void)
 	{
 	for (c = '0'; c <= '9'; c++)
 	{
-	for (d = '1'; d <= '9'; d++)
+	for (d = '0'; d <= '9'; d++)
 	{
-		if (!((a == b) == (c == d)))
-		{
-		if (!(a == c && b == d))
+		if (!((a == b) && (a == c) && (a == d)))
 		{
 		if (c >= a)
 		{
-		if (d == 0 || d > b)
+		if (d == '0' || d > b)
 		{
 			putchar(a);
 			putchar(b);
@@ -37,15 +32,7 @@ int main(void)
 			{
 				putchar(',');
 				putchar(' ');
-			}
-		}
-		}
-		}
-		}
-	}
-	}
-	}
-	}
+			}}}}}}}}
 	putchar('\n');
 	return (0);
 }
