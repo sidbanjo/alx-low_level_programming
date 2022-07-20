@@ -6,7 +6,7 @@
  */
 char *leet(char *s)
 {
-	char dict_w[] = "AaEeOoTtLl";	
+	char dict_w[] = "AaEeOoTtLl";
 	char dict_n[] = "4433007711";
 	int l;
 	int c = 0;
