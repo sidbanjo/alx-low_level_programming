@@ -10,9 +10,28 @@ int _strcmp(char *s1, char *s2)
 	signed int a;
 	signed int b;
 	signed int diff;
+	int i;
 
-	a = *(s1 + 0);
-	b = *(s2 + 0);
-	diff = a - b;
+	if (s1 == s2)
+	{
+		return (0);
+	}
+	else
+	{
+		for (i = 0; i >= 0; i++)
+		{
+			if (*(s1 + i) == *(s2 + i))
+			{
+				continue;
+			}
+			else
+			{
+				a = *(s1 + i);
+				b = *(s2 + i);
+				diff = a - b;
+				break;
+			}
+		}
+	}
 	return (diff);
 }
