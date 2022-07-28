@@ -21,14 +21,14 @@ char *str_concat(char *s1, char *s2)
 	if (c == NULL)
 		return (NULL);
 	if (s1 == NULL)
-		c[0] = "";
+		c[0] = *"";
 	else
 	{
 	for (n = 0; n < i1; n++)
 		c[n] = s1[n];
 	}
 	if (s2 == NULL)
-		c[n + i2] = "";
+		c[n + i2] = *"";
 	else
 	{
 	for (n = 0; n < i2; n++)
