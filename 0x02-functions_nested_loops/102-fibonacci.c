@@ -9,12 +9,12 @@ int main(void)
 {
 	int i;
 	unsigned long int fib;
-	unsigned long int prev = 1;
-	unsigned long int upp = 0;
+	unsigned long int prev = 2;
+	unsigned long int upp = 1;
 
-	for (i = 0; i < 50; i++)
+	for (i = 1; i <= 50; i++)
 	{
-		if (i < 2)
+		if (i < 3)
 			printf("%d", i);
 		else
 		{
@@ -23,7 +23,7 @@ int main(void)
 			prev = fib;
 			printf("%lu", fib);
 		}
-		if (i < 49)
+		if (i < 50)
 			printf(", ");
 	}
 	printf("\n");
