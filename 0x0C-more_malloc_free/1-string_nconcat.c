@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -10,34 +11,44 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	long int size1;
-	long int size2;
-	int i;
-	int x;
+	unsigned int size1;
+	unsigned int size2;
+	unsigned int i, x;
 	char *c;
 
-	if (*s1 == NULL)
+	if (s1 == NULL)
 		size1 = 2;
 	else
-		size1 = sizeof *s1;
-	if (*s2 == NULL)
+	{
+		for (size1 = 0; *(s1 + size1); size1++)
+		{
+		}
+	}
+	if (s2 == NULL)
 		size2 = 2;
 	else
 	{
-		if (n > sizeof *s2 - 1)
-			size2 = sizeof *s2 - 1;
-		else
+		for (size2 = 0; *(s2 + size2); size2++)
+		{
+		}
+		if (n < size2)
 			size2 = n;
 	}
-	c =  malloc(size1 + size2);
+	printf("size1 = %d...size2 = %d\n", size1, size2);
+	c =  malloc(size1 + size2 + 1);
 	if (c == NULL)
 	{
 		return (NULL);
 	}
 	for (i = 0; i < size1; i++)
 		c[i] = s1[i];
-	for(x = 0; x < size2; x++)
+	for (x = 0; x < size2; x++)
+	{
+		printf("second loop i[%d], x[%d]\n", i, x);
 		c[i] = s2[x];
+		i++;
+	}
+	printf("placing null i[%d]\n", i);
 	c[i] = '\0';
 	return (c);
 }
