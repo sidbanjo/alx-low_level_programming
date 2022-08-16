@@ -17,7 +17,7 @@ size_t print_listint_safe(const listint_t *head)
 	while (head)
 	{
 		printf("[%p] %d\n", (void *)head, head->n);
-		temp[i] = malloc(sizeof head);
+		temp[i] = malloc(sizeof(head));
 		temp[i]->n = head->n;
 		temp[i]->next = head->next;
 		head = head->next;
