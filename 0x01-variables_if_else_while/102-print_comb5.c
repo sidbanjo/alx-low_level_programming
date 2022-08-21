@@ -17,13 +17,7 @@ int main(void)
 	{
 	for (d = '0'; d <= '9'; d++)
 	{
-		if (!((a == b) && (a == c) && (a == d)))
-		{
-		if (!(a == c && b == d))
-		{
-		if (c >= a)
-		{
-		if (!(d < b))
+		if ((c * 10) + d > (a * 10) + b)
 		{
 			putchar(a);
 			putchar(b);
