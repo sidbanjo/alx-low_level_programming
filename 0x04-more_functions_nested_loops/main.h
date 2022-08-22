@@ -1,3 +1,6 @@
+#ifndef MAIN
+#define MAIN
+
 int _putchar(char c);
 int _isupper(int);
 int _isdigit(int);
@@ -10,3 +13,5 @@ void print_diagonal(int);
 void print_square(int);
 void print_triangle(int);
 void print_number(int);
+
+#endif
