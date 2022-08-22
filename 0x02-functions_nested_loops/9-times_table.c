@@ -16,9 +16,9 @@ void times_table(void)
 		for (y = 0; y <= 9; y++)
 		{
 			mul = x * y;
-			if (mul == 0)
-				continue;
-			else if (mul > 0 && mul < 10)
+			if (y > 0)
+			{
+			if (mul < 10)
 			{
 				_putchar(',');
 				_putchar(' ');
@@ -28,6 +28,7 @@ void times_table(void)
 			{
 				_putchar(',');
 				_putchar(' ');
+			}
 			}
 			if (mul < 10)
 				_putchar(mul + '0');

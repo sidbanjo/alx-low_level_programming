@@ -9,22 +9,17 @@ int main(void)
 {
 	int i;
 	unsigned long int sum;
-	unsigned long int fib = 0;
+	unsigned long int fib = 2;
 	unsigned long int prev = 2;
 	unsigned long int upp = 1;
 
-	for (i = 1; fib <= 4000000; i++)
+	for (i = 0; fib <= 4000000; i++)
 	{
-		if (i < 3)
-			printf("%d", i);
-		else
-		{
-			fib = prev + upp;
-			upp = prev;
-			prev = fib;
-			if (fib % 2 == 0)
-				sum += fib;
-		}
+		if (fib % 2 == 0)
+			sum += fib;
+		fib = prev + upp;
+		upp = prev;
+		prev = fib;
 	}
 	printf("%lu\n", sum);
 	return (0);

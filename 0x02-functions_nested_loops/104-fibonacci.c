@@ -7,24 +7,31 @@
  */
 int main(void)
 {
-	int i;
+	unsigned long int i, k1, k2, j1, j2;
 	unsigned long int fib;
 	unsigned long int prev = 2;
 	unsigned long int upp = 1;
 
-	for (i = 1; i <= 98; i++)
+	printf("%lu, %lu", upp, prev);
+	for (i = 1; i < 91; i++)
 	{
-		if (i < 3)
-			printf("%d", i);
-		else
-		{
-			fib = prev + upp;
-			upp = prev;
-			prev = fib;
-			printf("%lu", fib);
-		}
-		if (i < 98)
-			printf(", ");
+		fib = prev + upp;
+		upp = prev;
+		prev = fib;
+		printf(", %lu", fib);
+	}
+	j1 = upp / 1000000000;
+	j2 = upp % 1000000000;
+	k1 = prev / 1000000000;
+	k2 = prev % 1000000000;
+	for (i = 92; i < 99; ++i)
+	{
+		printf(", %lu", k1 + (k2 / 1000000000));
+		printf("%lu", k2 % 1000000000);
+		k1 = k1 + j1;
+		j1 = k1 - j1;
+		k2 = k2 + j2;
+		j2 = k2 - j2;
 	}
 	printf("\n");
 	return (0);
