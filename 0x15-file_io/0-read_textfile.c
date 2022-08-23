@@ -26,7 +26,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	for (i = 0; ptr[i]; i++)
 	{ }
 	count = write(1, ptr, i);
-	if (count == '\0')
+	if (count < i || count == -1)
 		return (0);
 	free(ptr);
 	return (count);
