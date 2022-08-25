@@ -13,7 +13,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	myfile = open(filename, O_APPEND);
+	myfile = open(filename, O_APPEND | O_RDWR);
 	if (myfile == -1)
 		return (-1);
 	if (text_content == NULL)
@@ -23,10 +23,8 @@ int append_text_to_file(const char *filename, char *text_content)
 		for (i = 0; text_content[i]; i++)
 		{ }
 		check = write(myfile, text_content, i);
-		if (check < i || check == -1)
-		{
+		if (check == -1)
 			return (-1);
-		}
 	}
 	check = close(myfile);
 	if (check == -1)
