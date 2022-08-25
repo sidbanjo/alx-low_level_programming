@@ -7,7 +7,8 @@
  *
  * Return: 1 on success, -1 on fail
  */
-int append_text_to_file(const char *filename, char *text_content){
+int append_text_to_file(const char *filename, char *text_content)
+{
 	int myfile, i, count;
 
 	if (filename == NULL)
@@ -27,5 +28,6 @@ int append_text_to_file(const char *filename, char *text_content){
 			return (-1);
 		}
 	}
+	close(myfile);
 	return (1);
 }
