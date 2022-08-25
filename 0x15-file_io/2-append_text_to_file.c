@@ -9,7 +9,7 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int myfile, i, count;
+	int myfile, i, check;
 
 	if (filename == NULL)
 		return (-1);
@@ -22,12 +22,14 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		for (i = 0; text_content[i]; i++)
 		{ }
-		count = write(myfile, text_content, i);
-		if (count < i || count == -1)
+		check = write(myfile, text_content, i);
+		if (check < i || check == -1)
 		{
 			return (-1);
 		}
 	}
-	close(myfile);
+	check = close(myfile);
+	if (check == -1)
+		return (-1);
 	return (1);
 }

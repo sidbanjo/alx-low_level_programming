@@ -9,7 +9,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int myfile, i;
+	int myfile, i, check;
 	ssize_t count;
 	char *ptr;
 
@@ -21,8 +21,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ptr = malloc(letters);
 	if (ptr == NULL)
 		return ('\0');
-	read(myfile, ptr, letters);
-	close(myfile);
+	check = read(myfile, ptr, letters);
+	if (check == -1)
+		return (0);
+	check = close(myfile);
+	if (check == -1)
+		return (0);
 	for (i = 0; ptr[i]; i++)
 	{ }
 	count = write(1, ptr, i);
