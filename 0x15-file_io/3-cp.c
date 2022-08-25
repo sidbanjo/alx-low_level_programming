@@ -10,7 +10,7 @@
  */
 void err(int exitno, char *message, char *file)
 {
-	dprintf(1, message, file);
+	dprintf(1, message"%s\n", file);
 	exit(exitno);
 }
 
@@ -27,16 +27,19 @@ int main(int argc, char **argv)
 	char *buf;
 
 	if (argc != 3)
-		err(97, "usage: cp file_from file_to\n", NULL);
+	{
+		dprintf(1, "usage: cp file_from file_to\n");
+		exit(97);
+	}
 	file1 = open(argv[1], O_RDONLY);
 	if (file1 == -1)
-		err(98, "Error: Can't read from file %s\n", argv[1]);
+		err(98, "Error: Can't read from file ", argv[1]);
 	buf = malloc(1024);
 	if (buf == NULL)
 		return (-1);
 	check = read(file1, buf, 1024);
 	if (check == -1)
-		err(98, "Error: Can't read from file %s\n", argv[1]);
+		err(98, "Error: Can't read from file ", argv[1]);
 	check = close(file1);
 	if (check == -1)
 	{
@@ -45,12 +48,12 @@ int main(int argc, char **argv)
 	}
 	file2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 00664);
 	if (file2 == -1)
-		err(99, "Error: Can't write to %s\n", argv[2]);
+		err(99, "Error: Can't write to ", argv[2]);
 	for (count = 0; buf[count]; count++)
 	{ }
 	check = write(file2, buf, count);
 	if (check == -1)
-		err(99, "Error: Can't write to %s\n", argv[2]);
+		err(99, "Error: Can't write to ", argv[2]);
 	check = close(file2);
 	free(buf);
 	if (check == -1)

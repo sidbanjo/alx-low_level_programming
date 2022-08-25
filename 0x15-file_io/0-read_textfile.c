@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	ptr = malloc(letters);
 	if (ptr == NULL)
-		return (0);
+		return ('\0');
 	check = read(myfile, ptr, letters);
 	if (check == -1)
 		return (0);
@@ -30,7 +30,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	for (i = 0; ptr[i]; i++)
 	{ }
 	count = write(1, ptr, i);
-	if ((size_t)count != letters)
+	if (count == -1)
+		return (0);
+	if (count < letters)
 		return (0);
 	free(ptr);
 	return (count);
